@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BankingApp.WebServices</name>
+    </assembly>
+    <members>
+        <member name="M:BankingApp.WebServices.Controllers.CustomerController.GetMiniStatement(System.String)">
+            <summary>
+            Returns Mini statement
+            </summary>
+            <param name="id"></param>
+            <returns>A list of last 5 transactions</returns>
+            <remarks>
+            Sample Request:
+            
+                GET: /api/Customer/GetMiniStatement/SA-000007
+            </remarks>
+        </member>
+        <member name="M:BankingApp.WebServices.Controllers.CustomerController.Checkbalance(System.String)">
+            <summary>
+            Returns account balance
+            </summary>
+            <param name="accountNumber"></param>
+            <returns>Account Balance</returns>
+            <remarks>
+            Sample Request:
+            
+                GET: /api/Customer/Checkbalance/SB-000007
+            </remarks>
+        </member>
+        <member name="M:BankingApp.WebServices.Controllers.CustomerController.GetCustomizedStatement(BankingApp.CommonLayer.Models.CustomizedStatement)">
+            <summary>
+            Returns a Customized statement
+            </summary>
+            <param name="customizedStatement"></param>
+            <returns> A list of customized transactions</returns>
+            /// <remarks>
+            Sample Request:
+            
+                GET: /api/Customer/GetCustomizedStatement
+            </remarks>
+        </member>
+        <member name="M:BankingApp.WebServices.Controllers.CustomerController.FundTransfer(BankingApp.CommonLayer.Models.Transaction)">
+            <summary>
+            Returns a new transaction
+            </summary>
+            <param name="transaction"></param>
+            <returns>new transaction</returns>
+            /// /// <remarks>
+            Sample Request:
+            
+                POST: /api/Customer/FundTransfer
+            </remarks>
+        </member>
+    </members>
+</doc>
