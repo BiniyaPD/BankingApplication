@@ -1,0 +1,89 @@
+﻿@model BankingApp.WebApp.Models.CustomerVM
+
+@{
+    ViewData["Title"] = "EditCustomer";
+}
+<h4>Update Customer</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditCustomer" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="FirstName" class="control-label"></label>
+                <input asp-for="FirstName" class="form-control" value="@Model.FirstName" />
+                <span asp-validation-for="FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="LastName" class="control-label"></label>
+                <input asp-for="LastName" class="form-control" value="@Model.LastName" />
+                <span asp-validation-for="LastName" class="text-danger"></span>
+            </div>
+             <div class="form-group">
+                <label asp-for="Gender" class="control-label"></label><br />
+                @if(Model.Gender=="Male")
+                {
+                    <span>
+                        <input asp-for="Gender" type="radio" name="gender" value="Male" checked/>Male
+                        <input asp-for="Gender" type="radio" name="gender" value="Female"/> Female
+                        <input asp-for="Gender" type="radio" name="gender" value="Others"/> Others
+                    </span>
+                }
+                else if(Model.Gender=="Female")
+                {
+                    <span>
+                        <input asp-for="Gender" type="radio" name="gender" value="Male"/>Male
+                        <input asp-for="Gender" type="radio" name="gender" value="Female" checked /> Female
+                        <input asp-for="Gender" type="radio" name="gender" value="Others"/> Others
+                    </span>
+                }
+                else
+                {
+                    <span>
+                        <input asp-for="Gender" type="radio" name="gender" value="Male"/>Male
+                        <input asp-for="Gender" type="radio" name="gender" value="Female"/> Female
+                        <input asp-for="Gender" type="radio" name="gender" value="Others" checked/> Others
+                    </span>
+                }
+                
+                <span asp-validation-for="Gender" class="text-danger"></span>
+            </div>   
+            <div class="form-group">
+                <label asp-for="Dob" class="control-label"></label>
+                <input asp-for="Dob" class="form-control" value="@Model.Dob"/>
+                <span asp-validation-for="Dob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EmailId" class="control-label"></label>
+                <input asp-for="EmailId" class="form-control" value="@Model.EmailId" />
+                <span asp-validation-for="EmailId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileNumber" class="control-label"></label>
+                <input asp-for="MobileNumber" class="form-control" value="@Model.MobileNumber" />
+                <span asp-validation-for="MobileNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="City" class="control-label"></label>
+                <input asp-for="City" class="form-control" value="@Model.City" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <input asp-for="State" class="form-control" value="@Model.State" />
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pincode" class="control-label"></label>
+                <input asp-for="Pincode" class="form-control" value="@Model.Pincode"/>
+                <span asp-validation-for="Pincode" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-primary" asp-action="EditCustomerDetails" asp-controller="Customer" />
+                <input type="reset" value="Reset" class="btn btn-outline-danger"/>
+            </div>
+        </form>
+    </div>
+</div>
+
+

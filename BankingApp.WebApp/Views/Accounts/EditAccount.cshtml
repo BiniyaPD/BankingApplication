@@ -1,0 +1,45 @@
+﻿@model BankingApp.WebApp.Models.AccountVM
+
+@{
+    ViewData["Title"] = "EditAccount";
+}
+
+<h4>Update Account</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="EditAccount" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="CustomerId" class="control-label"></label>
+                <input asp-for="CustomerId" class="form-control" value="@Model.CustomerId" readonly/>
+                <span asp-validation-for="CustomerId" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AccountType" class="control-label"></label>
+                <select class="form-control" asp-for="AccountType" aria-label="Default select example">
+                    @*<option value="@Model.AccountType" selected>@Model.AccountType</option>*@
+                    <option value="Savings">Savings Account</option>
+                    <option value="Current">Current Account</option>
+                    <option value="Corporate">Corporate Account</option>
+                </select> 
+                <span asp-validation-for="AccountType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Balance" class="control-label"></label>
+                <input asp-for="Balance" class="form-control" value="@Model.Balance" />
+                <span asp-validation-for="Balance" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Tin" class="control-label"></label>
+                <input asp-for="Tin" class="form-control" value="@Model.Tin" />
+                <span asp-validation-for="Tin" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn btn-primary" asp-controller="Accounts" asp-action="EditAccountDetails"/>
+                <input type="reset" value="Reset" class="btn btn-outline-danger"/>
+            </div>
+        </form>
+    </div>
+</div>
+

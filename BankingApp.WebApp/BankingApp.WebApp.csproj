@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="5.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BankingApp.BusinessLayer\BankingApp.BusinessLayer.csproj" />
+    <ProjectReference Include="..\BankingApp.CommonLayer\BankingApp.CommonLayer.csproj" />
+    <ProjectReference Include="..\BankingApp.DataLayer\BankingApp.EFLayer.csproj" />
+  </ItemGroup>
+
+</Project>

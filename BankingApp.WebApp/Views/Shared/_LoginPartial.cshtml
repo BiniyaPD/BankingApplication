@@ -1,0 +1,70 @@
+﻿@using Microsoft.AspNetCore.Http
+@using Microsoft.AspNetCore.Identity
+<div class="navbar-nav justify-content-sm-start">
+@{
+        var managerId = Context.Session.GetString("ManagerId");
+        if (managerId != null)
+        {
+            <div class="dropdown">
+              <a class="nav-link text-white mx-2" dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Accounts
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" asp-controller="Accounts" asp-action="AddAccount">Add new Account</a>
+                <a class="dropdown-item" asp-controller="Accounts" asp-action="EditAccountNumberSubmit">Update Account</a>
+                <a class="dropdown-item"  asp-controller="Accounts" asp-action="DeleteAccount">Delete Account</a>
+              </div>
+            </div>
+              <div class="dropdown">
+              <a class="nav-link mx-2 text-white" dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Customers
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" asp-controller="Customer" asp-action="AddCustomer">Add new Customer</a>
+                <a class="dropdown-item" asp-controller="Customer" asp-action="EditCustomerIdSubmit">Update Customer</a>
+                <a class="dropdown-item"  asp-controller="Customer" asp-action="DeleteCustomer">Delete Customer</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a class="nav-link mx-2 text-white" dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Transactions
+              </a>
+
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" asp-controller="Transactions" asp-action="Deposit">Deposit</a>
+                <a class="dropdown-item" asp-controller="Transactions" asp-action="Withdraw">Withdraw</a>
+                <a class="dropdown-item"  asp-controller="Transactions" asp-action="FundTransfer">Fund Transfer</a>
+                <a class="dropdown-item"  asp-controller="Transactions" asp-action="BalanceCheck">Check Balance</a>
+                <a class="dropdown-item"  asp-controller="Transactions" asp-action="MiniStatement">Mini Statement</a>
+                <a class="dropdown-item"  asp-controller="Transactions" asp-action="CustomizedStatement">Customized Statementt</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a class="btn btn-sm btn-outline-dark text-white " dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Logout @managerId
+              </a>
+              <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" asp-controller="Home" asp-action="Logout">Logout</a>
+                  <a class="dropdown-item" asp-controller="Home" asp-action="ChangePassword">ChangePassword</a>
+              </div>
+              </div>
+             
+              
+           @* <a class="nav-link mx-2 text-white" asp-controller="Home" asp-action="ChangePassword">Change Password</a>
+            <form method="post" asp-controller="Home" asp-action="Logout">
+            <button class="btn btn-sm btn-outline-light" dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Logout @managerId
+            </button>
+            </form>*@
+        }
+       else
+        {
+            <a asp-controller="Home" asp-action="Login" class="btn btn-sm btn-outline-light ">
+            Login 
+            </a>
+        }
+        
+ }   
+</div>
